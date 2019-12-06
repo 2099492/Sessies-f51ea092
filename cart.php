@@ -12,22 +12,12 @@
  </form>
 
 <?php
-$_SESSION['keuze'] = $skate = "Skateboard";
-setcookie("#1", $skate);
-
-$bask = "basketbal";
-setcookie("#2", $bask);
-
-$skeel = "Skeelsers";
-setcookie("#3", $skeel);
-
-if (isset($_POST["button"])) {
-  if ($_COOKIE[$_POST["input"]]) {
-     echo "gekozen item: " . $_COOKIE[$_POST["input"]];
+if (isset($_POST["input"])) {
+  if ($_POST["input"] <= 3) {
+    $_SESSION["input"] = $_POST["input"];
   }
 }
-
- $_SESSION['keuze'];
+echo  ($_SESSION["input"]);
 // setcookie("test", $input);
 // echo $_COOKIE["test"];
  ?>
